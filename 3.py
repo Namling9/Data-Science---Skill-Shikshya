@@ -24,6 +24,7 @@
 # git pull origin main <- ( used to fetch and download content from a remote repo and immediately update
 # the local repo to match the content).
 
+# git push origin branch_name
 # Undoing Changes
 
 '''Case 1 : Staged changes (add .)
