@@ -8,13 +8,13 @@
 #          age: 5
 #          type: dog
 
-# def descrip_pet(**kwargs):
-#     print(kwargs)
-#     for key,value in kwargs.items():
-#         print(f"{key}: {value}")
+def descrip_pet(**kwargs):
+     print(kwargs)
+     for key,value in kwargs.items():
+         print(f"{key}: {value}")
     
 
-# descrip_pet(name = "Rex", age = 5, type = "dog")
+descrip_pet(name = "Rex", age = 5, type = "dog")
 
 '''
 output: 
