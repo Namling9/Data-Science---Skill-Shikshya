@@ -1,4 +1,4 @@
-# py -m venv "virtual environment name" <- to create virtual environment
+# python3 -m venv "virtual environment name" <- to create virtual environment
 # source "virtual environment name"/bin/activate <- to activate virtual environment
 # ctrl + shift + p -> python interpreter -> select workspace (It will automatically activate the virutal environment whenever you open the particular folder/ project)
 
