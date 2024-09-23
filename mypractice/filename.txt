@@ -1,0 +1,6 @@
+This is file handling class in python and 
+    we are learning data science and machine learning 
+    after python classes finished and we are going to 
+    do some awesome cool projects
+    
+    

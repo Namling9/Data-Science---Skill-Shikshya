@@ -1,0 +1,2 @@
+2024-09-18 12:08:53.491714 : Hello world, This is a python file handling and exception handling project.
+ 2024-09-18 12:24:58.572353 :Testing append feature 
