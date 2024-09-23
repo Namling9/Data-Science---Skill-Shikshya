@@ -57,3 +57,126 @@ the original "upstream" repository'''
 
 # Fork is a rough copy
 # clone is a exact copy
+
+
+
+class Product:
+    
+    def __init__(self,products,prices):
+        self.products = products
+        self.prices = prices
+    
+    
+    def display_products(self):
+        dict_products = {}
+        for product, price in zip(self.products,self.prices):
+            dict_products[product] = price
+        print(dict_products)
+
+product_list = ['Bottle', 'Laptop', 'GPU', 'CPU', 'RAM']
+price_list = [200,100000,60000,50000,15000]
+
+p1 = Product(product_list,price_list)
+
+# class Store:
+#     def __init__(self, products, prices):
+#         self.products = products
+#         self.prices = prices
+
+#     def display_products(self):
+#         for product, price in zip(self.products, self.prices):
+#             print(f"Product: {product}, Price: ${price}")
+
+# # Creating a list of products and their corresponding prices
+# product_list = ["Laptop", "Phone", "Tablet"]
+# price_list = [1000, 500, 300]
+
+# # Initializing the Store object
+# store = Store(product_list, price_list)
+# store.display_products()
+
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def __str__(self):
+        return f"{self.name} - ${self.price}"
+    
+class User:
+    def __init__(self, name, is_premium=False, is_admin=False):
+        self.name = name
+        self.is_premium = is_premium
+        self.is_admin = is_admin
+        self.cart = ShoppingCart()
+
+    def set_premium(self, user):
+        if self.is_admin:
+            user.is_premium = True
+            print(f"{user.name} has been set as a premium user.")
+        else:
+            print("Only admins can set a user as premium.")
+
+    def create_admin(self, user):
+        if self.is_admin:
+            user.is_admin = True
+            print(f"{user.name} has been made an admin.")
+        else:
+            print("Only admins can create other admins.")
+class ShoppingCart:
+    def __init__(self):
+        self.cart_items = []
+
+    def add_product(self, product):
+        self.cart_items.append(product)
+        print(f"{product.name} added to cart.")
+
+    def remove_product(self, product):
+        if product in self.cart_items:
+            self.cart_items.remove(product)
+            print(f"{product.name} removed from cart.")
+        else:
+            print(f"{product.name} is not in the cart.")
+
+    def calculate_total_cost(self, user):
+        total_cost = sum(product.price for product in self.cart_items)
+        if user.is_premium:
+            total_cost *= 0.9  # Apply 10% discount for premium users
+        return total_cost
+
+    def generate_invoice(self, user):
+        print("\nInvoice:")
+        print("--------")
+        for product in self.cart_items:
+            print(f"Product: {product.name}, Price: ${product.price}")
+        total_cost = self.calculate_total_cost(user)
+        print(f"Total cost: ${total_cost:.2f}")
+        if user.is_premium:
+            print("A 10% discount has been applied (Premium user).")
+
+
+# Create some products
+laptop = Product("Laptop", 1000)
+phone = Product("Phone", 500)
+tablet = Product("Tablet", 300)
+
+# Create users
+user1 = User("Alice", is_premium=False, is_admin=True)  # Admin user
+user2 = User("Bob")  # Regular user
+
+# Admin user adds premium feature to Bob
+user1.set_premium(user2)
+
+# Add products to Bob's cart
+user2.cart.add_product(laptop)
+user2.cart.add_product(phone)
+
+# Remove a product
+user2.cart.remove_product(phone)
+
+# Generate the invoice for Bob (with premium discount)
+user2.cart.generate_invoice(user2)
+
+# Admin creates another admin
+user1.create_admin(user2)
