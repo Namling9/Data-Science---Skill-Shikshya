@@ -97,6 +97,7 @@ p1 = Product(product_list,price_list)
 
 
 class Product:
+
     def __init__(self, name, price):
         self.name = name
         self.price = price
@@ -114,7 +115,7 @@ class User:
     def set_premium(self, user):
         if self.is_admin:
             user.is_premium = True
-            print(f"{user.name} has been set as a premium user.")
+            print(f"{self} has been set as a premium user.")
         else:
             print("Only admins can set a user as premium.")
 
@@ -123,7 +124,7 @@ class User:
             user.is_admin = True
             print(f"{user.name} has been made an admin.")
         else:
-            print("Only admins can create other admins.")
+            print(f"{self.name}, Only admins can create other admins.")
 class ShoppingCart:
     def __init__(self):
         self.cart_items = []
@@ -164,7 +165,7 @@ tablet = Product("Tablet", 300)
 # Create users
 user1 = User("Alice", is_premium=False, is_admin=True)  # Admin user
 user2 = User("Bob")  # Regular user
-
+user3 = User("Krish")
 # Admin user adds premium feature to Bob
 user1.set_premium(user2)
 
@@ -180,3 +181,5 @@ user2.cart.generate_invoice(user2)
 
 # Admin creates another admin
 user1.create_admin(user2)
+
+user3.create_admin(user2)
