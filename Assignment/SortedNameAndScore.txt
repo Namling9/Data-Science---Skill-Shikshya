@@ -1,0 +1,1 @@
+{'Sophia': '95', 'Emily': '93', 'Alice': '92', 'Emma': '90', 'William': '89', 'Olivia': '88', 'Sarah': '85', 'James': '82', 'Ethan': '81', 'Mark': '78', 'Ava': '76', 'Michael': '74', 'Mia': '71', 'Daniel': '67', 'David': '63'}

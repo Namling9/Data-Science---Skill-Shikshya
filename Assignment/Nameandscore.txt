@@ -1,0 +1,15 @@
+Alice, 92
+Mark, 78
+Sarah, 85
+David, 63
+Emma, 90
+Michael, 74
+Olivia, 88
+Daniel, 67
+Sophia, 95
+James, 82
+Ava, 76
+William, 89
+Mia, 71
+Ethan, 81
+Emily, 93
